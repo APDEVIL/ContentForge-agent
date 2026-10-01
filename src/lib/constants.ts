@@ -6,29 +6,29 @@ export const BRAND = {
 /* ---------- images (see the public/ folder) ---------- */
 
 export const IMAGES = {
-	logo: "/brand/logo.svg",
-	logoMark: "/brand/logo-mark.svg",
+	logo: "/brand/logo.png",
+	logoMark: "/brand/logo-mark.png",
 	og: "/og.png",
 	characters: [
-		"/characters/creator-1.webp",
-		"/characters/creator-2.webp",
-		"/characters/creator-3.webp",
-		"/characters/creator-4.webp",
-		"/characters/creator-5.webp",
+		"/characters/creator-1.png",
+		"/characters/creator-2.png",
+		"/characters/creator-3.png",
+		"/characters/creator-4.png",
+		"/characters/creator-5.png",
 	],
 	steps: {
-		voice: "/steps/step-1-voice.webp",
-		trends: "/steps/step-2-trends.webp",
-		create: "/steps/step-3-create.webp",
-		approve: "/steps/step-4-approve.webp",
+		voice: "/steps/step-1-voice.png",
+		trends: "/steps/step-2-trends.png",
+		create: "/steps/step-3-create.png",
+		approve: "/steps/step-4-approve.png",
 	},
-	cta: "/cta/cta-character.webp",
+	cta: "/cta/cta-character.png",
 	empty: {
-		brands: "/empty/empty-brands.webp",
+		brands: "/empty/empty-brands.png",
 		packs: "/empty/empty-packs.webp",
 		calendar: "/empty/empty-calendar.webp",
 	},
-	generating: "/loading/generating.webp",
+	generating: "/loading/generating.png",
 } as const;
 
 /* ---------- colours used by GSAP / canvas effects ---------- */
@@ -64,7 +64,7 @@ export const PLATFORM_META: Record<
 		maxChars: 2200,
 		maxHashtags: 15,
 		aspect: "aspect-square",
-		icon: "/platforms/instagram.svg",
+		icon: "/platforms/instagram.png",
 		gradient: "from-fuchsia-300 via-orange-200 to-yellow-200",
 	},
 	linkedin: {
@@ -72,7 +72,7 @@ export const PLATFORM_META: Record<
 		maxChars: 3000,
 		maxHashtags: 5,
 		aspect: "aspect-[19/10]",
-		icon: "/platforms/linkedin.svg",
+		icon: "/platforms/linkedin.png",
 		gradient: "from-sky-300 via-blue-200 to-cyan-100",
 	},
 	x: {
@@ -80,7 +80,7 @@ export const PLATFORM_META: Record<
 		maxChars: 280,
 		maxHashtags: 2,
 		aspect: "aspect-video",
-		icon: "/platforms/x.svg",
+		icon: "/platforms/x.png",
 		gradient: "from-zinc-300 via-slate-200 to-stone-100",
 	},
 };

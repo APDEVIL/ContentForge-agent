@@ -1,6 +1,6 @@
 import { v } from "convex/values";
-import { mutation, query, type MutationCtx } from "./_generated/server";
 import type { Doc } from "./_generated/dataModel";
+import { type MutationCtx, mutation, query } from "./_generated/server";
 
 async function setSlot(
   ctx: MutationCtx,
@@ -58,8 +58,8 @@ export const autoSchedulePack = mutation({
       .withIndex("by_pack", (q) => q.eq("packId", packId))
       .collect();
     const approved = posts.filter((p) => p.status === "approved");
-    for (let i = 0; i < approved.length; i++) {
-      await setSlot(ctx, approved[i], startAt + i * step);
+    for (const [i, post] of approved.entries()) {
+      await setSlot(ctx, post, startAt + i * step);
     }
     return approved.length;
   },
@@ -71,7 +71,10 @@ export const listRange = query({
     const slots = await ctx.db
       .query("calendarSlots")
       .withIndex("by_brand_date", (q) =>
-        q.eq("brandId", brandId).gte("scheduledFor", from).lte("scheduledFor", to),
+        q
+          .eq("brandId", brandId)
+          .gte("scheduledFor", from)
+          .lte("scheduledFor", to),
       )
       .collect();
     return await Promise.all(

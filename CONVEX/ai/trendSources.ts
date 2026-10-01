@@ -24,7 +24,9 @@ async function googleNews(query: string): Promise<string[]> {
     ...xml.matchAll(
       /<title>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/g,
     ),
-  ].map((m) => m[1].trim());
+  ]
+    .map((m) => m[1]?.trim() ?? "")
+    .filter(Boolean);
   return titles.slice(1, 11); // first <title> is the feed name
 }
 
